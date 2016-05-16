@@ -46,6 +46,10 @@
             this.Forth = new System.Windows.Forms.ContextMenuStrip(this.components);
             this.更换应用ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.退出ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
+            this.更改名称ToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.更改名称ToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.更改名称ToolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.更改名称ToolStripMenuItem3 = new System.Windows.Forms.ToolStripMenuItem();
             this.First.SuspendLayout();
             this.Second.SuspendLayout();
             this.Third.SuspendLayout();
@@ -81,9 +85,10 @@
             // 
             this.First.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.更改应用ToolStripMenuItem,
+            this.更改名称ToolStripMenuItem,
             this.退出ToolStripMenuItem});
             this.First.Name = "First";
-            this.First.Size = new System.Drawing.Size(125, 48);
+            this.First.Size = new System.Drawing.Size(125, 70);
             // 
             // 更改应用ToolStripMenuItem
             // 
@@ -126,9 +131,10 @@
             // 
             this.Second.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.更改应用ToolStripMenuItem1,
+            this.更改名称ToolStripMenuItem1,
             this.退出ToolStripMenuItem1});
             this.Second.Name = "Second";
-            this.Second.Size = new System.Drawing.Size(125, 48);
+            this.Second.Size = new System.Drawing.Size(125, 70);
             // 
             // 更改应用ToolStripMenuItem1
             // 
@@ -171,9 +177,10 @@
             // 
             this.Third.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.更换应用ToolStripMenuItem,
+            this.更改名称ToolStripMenuItem2,
             this.退出ToolStripMenuItem2});
             this.Third.Name = "Third";
-            this.Third.Size = new System.Drawing.Size(125, 48);
+            this.Third.Size = new System.Drawing.Size(125, 70);
             // 
             // 更换应用ToolStripMenuItem
             // 
@@ -216,23 +223,48 @@
             // 
             this.Forth.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.更换应用ToolStripMenuItem1,
+            this.更改名称ToolStripMenuItem3,
             this.退出ToolStripMenuItem3});
             this.Forth.Name = "Forth";
-            this.Forth.Size = new System.Drawing.Size(125, 48);
+            this.Forth.Size = new System.Drawing.Size(153, 92);
             // 
             // 更换应用ToolStripMenuItem1
             // 
             this.更换应用ToolStripMenuItem1.Name = "更换应用ToolStripMenuItem1";
-            this.更换应用ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.更换应用ToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.更换应用ToolStripMenuItem1.Text = "更换应用";
             this.更换应用ToolStripMenuItem1.Click += new System.EventHandler(this.更换应用ToolStripMenuItem1_Click);
             // 
             // 退出ToolStripMenuItem3
             // 
             this.退出ToolStripMenuItem3.Name = "退出ToolStripMenuItem3";
-            this.退出ToolStripMenuItem3.Size = new System.Drawing.Size(124, 22);
+            this.退出ToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
             this.退出ToolStripMenuItem3.Text = "退出";
             this.退出ToolStripMenuItem3.Click += new System.EventHandler(this.退出ToolStripMenuItem3_Click);
+            // 
+            // 更改名称ToolStripMenuItem
+            // 
+            this.更改名称ToolStripMenuItem.Name = "更改名称ToolStripMenuItem";
+            this.更改名称ToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.更改名称ToolStripMenuItem.Text = "更改名称";
+            // 
+            // 更改名称ToolStripMenuItem1
+            // 
+            this.更改名称ToolStripMenuItem1.Name = "更改名称ToolStripMenuItem1";
+            this.更改名称ToolStripMenuItem1.Size = new System.Drawing.Size(124, 22);
+            this.更改名称ToolStripMenuItem1.Text = "更改名称";
+            // 
+            // 更改名称ToolStripMenuItem2
+            // 
+            this.更改名称ToolStripMenuItem2.Name = "更改名称ToolStripMenuItem2";
+            this.更改名称ToolStripMenuItem2.Size = new System.Drawing.Size(124, 22);
+            this.更改名称ToolStripMenuItem2.Text = "更改名称";
+            // 
+            // 更改名称ToolStripMenuItem3
+            // 
+            this.更改名称ToolStripMenuItem3.Name = "更改名称ToolStripMenuItem3";
+            this.更改名称ToolStripMenuItem3.Size = new System.Drawing.Size(152, 22);
+            this.更改名称ToolStripMenuItem3.Text = "更改名称";
             // 
             // ThinkSUN
             // 
@@ -288,6 +320,10 @@
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem2;
         private System.Windows.Forms.ToolStripMenuItem 更换应用ToolStripMenuItem1;
         private System.Windows.Forms.ToolStripMenuItem 退出ToolStripMenuItem3;
+        private System.Windows.Forms.ToolStripMenuItem 更改名称ToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem 更改名称ToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem 更改名称ToolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem 更改名称ToolStripMenuItem3;
     }
 }
 
