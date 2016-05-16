@@ -65,8 +65,8 @@ namespace ThinkVantage
 
         private string getName(string name)
         {
-            string[] namesOLD = new string[] {"QQ", "Photoshop", "AfterEffects", "Dreamweaver", "Counter-Strike", "devenv" };
-            string[] namesNEW = new string[] {"QQ", "Ps", "Ae", "Dw", "CS", "Vs" };
+            string[] namesOLD = new string[] {"UC Browser", "QQ", "Photoshop", "AfterEffects", "Dreamweaver", "Counter-Strike", "devenv" };
+            string[] namesNEW = new string[] {"UC", "QQ", "Ps", "Ae", "Dw", "CS", "Vs" };
             string ret = name;
             int flag = 0;
             int i = 0;
@@ -237,6 +237,7 @@ namespace ThinkVantage
         {
             quitAndSave();
         }
+
         private void quitAndSave()
         {
             FileStream myFs = new FileStream("config.dat", FileMode.Open, FileAccess.Write);
