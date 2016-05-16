@@ -8,7 +8,10 @@ namespace ThinkVantage
 {
     public partial class ThinkSUN : Form
     {
-        private string[] buttonName = new string[4];
+        private string buttonone = "";
+        private string buttontwo = "";
+        private string buttonthree = "";
+        private string buttonfour = "";
         private int fst = 0;
         Random red = new Random();
         Random green = new Random();
@@ -37,14 +40,26 @@ namespace ThinkVantage
                     while (content != null)
                     {
                         lineNum++;
-                        buttonName[lineNum - 1] = content;
+                        if (lineNum == 1)
+                            buttonone = content;
+                        if (lineNum == 2)
+                            buttontwo = content;
+                        if (lineNum == 3)
+                            buttonthree = content;
+                        if (lineNum == 4)
+                            buttonfour = content;
                         content = line.ReadLine();
                     }
                     line.Close();
                     config.Close();
                 }
                 catch { ; }
-                loadPic(4);
+                int[] arr = new int[4];
+                arr[0] = 1;
+                arr[1] = 2;
+                arr[2] = 3;
+                arr[3] = 4;
+                loadPic(arr, 4);
             }
         }
 
@@ -67,15 +82,41 @@ namespace ThinkVantage
             return ret;
         }
 
-        private void loadPic(int c)
+        private void loadPic(int[] num, int c)
         {
             for (int i=0; i < c; i++)
             {
-                string[] temp = buttonName[i].Split('\\');
-                string name = temp[temp.Length-1];
-                buttons[i].Text = getName(name.Split('.')[0]);
-                buttons[i].Tag = name.Split('.')[0];
-                buttons[i].BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                switch (num[i])
+                {
+                    case 1:
+                        string[] temp = buttonone.Split('\\');
+                        string name = temp[temp.Length-1];
+                        button1.Text = getName(name.Split('.')[0]);
+                        button1.Tag = name.Split('.')[0];
+                        button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        break;
+                    case 2:
+                        string[] temp2 = buttontwo.Split('\\');
+                        string name2 = temp2[temp2.Length - 1];
+                        button2.Text = getName(name2.Split('.')[0]);
+                        button2.Tag = name2.Split('.')[0];
+                        button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        break;
+                    case 3:
+                        string[] temp3 = buttonthree.Split('\\');
+                        string name3 = temp3[temp3.Length - 1];
+                        button3.Text = getName(name3.Split('.')[0]);
+                        button3.Tag = name3.Split('.')[0];
+                        button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        break;
+                    case 4:
+                        string[] temp4 = buttonfour.Split('\\');
+                        string name4 = temp4[temp4.Length - 1];
+                        button4.Text = getName(name4.Split('.')[0]);
+                        button4.Tag = name4.Split('.')[0];
+                        button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        break;
+                }
             }
         }
 
@@ -95,86 +136,86 @@ namespace ThinkVantage
 
         private void button1_Click(object sender, EventArgs e)
         {
-            if (buttonName[0] == "" || !File.Exists(buttonName[0]))
+            if (buttonone == "" || !File.Exists(buttonone))
             {
                 if (fst == 0)
                     MessageBox.Show("无效的程序路径！\n");
-                buttonName[0] = getNewApp(buttonName[0]);
+                buttonone = getNewApp(buttonone);
                 return;
             }
-            Process.Start(buttonName[0]);
+            Process.Start(buttonone);
             quitAndSave();
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            if (buttonName[1] == "" || !File.Exists(buttonName[1]))
+            if (buttontwo == "" || !File.Exists(buttontwo))
             {
                 if (fst == 0)
                     MessageBox.Show("无效的程序路径！\n");
-                buttonName[1] = getNewApp(buttonName[1]);
+                buttontwo = getNewApp(buttontwo);
                 return;
             }
-            Process.Start(buttonName[1]);
+            Process.Start(buttontwo);
             quitAndSave();
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (buttonName[2] == "" || !File.Exists(buttonName[2]))
+            if (buttonthree == "" || !File.Exists(buttonthree))
             {
                 if (fst == 0)
                     MessageBox.Show("无效的程序路径！\n");
-                buttonName[2] = getNewApp(buttonName[2]);
+                buttonthree = getNewApp(buttonthree);
                 return;
             }
-            Process.Start(buttonName[2]);
+            Process.Start(buttonthree);
             quitAndSave();
         }
 
         private void button4_Click(object sender, EventArgs e)
         {
-            if (buttonName[3] == "" || !File.Exists(buttonName[3]))
+            if (buttonfour == "" || !File.Exists(buttonfour))
             {
                 if (fst == 0)
                     MessageBox.Show("无效的程序路径！\n");
-                buttonName[3] = getNewApp(buttonName[3]);
+                buttonfour = getNewApp(buttonfour);
                 return;
             }
-            Process.Start(buttonName[3]);
+            Process.Start(buttonfour);
             quitAndSave();
         }
 
         private void 更改应用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            buttonName[0] = getNewApp(buttonName[0]);
+            buttonone = getNewApp(buttonone);
             int[] a = new int[1];
             a[0] = 1;
-            loadPic(1);
+            loadPic(a, 1);
         }
 
         private void 更改应用ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            buttonName[1] = getNewApp(buttonName[1]);
+            buttontwo = getNewApp(buttontwo);
             int[] a = new int[1];
             a[0] = 2;
-            loadPic(2);
+            loadPic(a, 1);
         }
 
         private void 更换应用ToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            buttonName[2] = getNewApp(buttonName[2]);
+            buttonthree = getNewApp(buttonthree);
             int[] a = new int[1];
             a[0] = 3;
-            loadPic(3);
+            loadPic(a, 1);
         }
 
         private void 更换应用ToolStripMenuItem1_Click(object sender, EventArgs e)
         {
-            buttonName[3] = getNewApp(buttonName[3]);
+            buttonfour = getNewApp(buttonfour);
             int[] a = new int[1];
             a[0] = 4;
-            loadPic(4);
+            loadPic(a, 1);
         }
 
         private void 退出ToolStripMenuItem_Click(object sender, EventArgs e)
@@ -196,14 +237,27 @@ namespace ThinkVantage
         {
             quitAndSave();
         }
-
         private void quitAndSave()
         {
             FileStream myFs = new FileStream("config.dat", FileMode.Open, FileAccess.Write);
             StreamWriter mySw = new StreamWriter(myFs);
             for (int i = 0; i < 4; i++)
             {
-                mySw.WriteLine(buttonName[i]);
+                switch (i)
+                {
+                    case 0:
+                        mySw.WriteLine(buttonone);
+                        break;
+                    case 1:
+                        mySw.WriteLine(buttontwo);
+                        break;
+                    case 2:
+                        mySw.WriteLine(buttonthree);
+                        break;
+                    case 3:
+                        mySw.WriteLine(buttonfour);
+                        break;
+                }
             }   
             mySw.Close();
             myFs.Close();
