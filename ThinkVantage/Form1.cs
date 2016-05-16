@@ -3,6 +3,9 @@ using System.Diagnostics;
 using System.IO;
 using System.Text;
 using System.Windows.Forms;
+using System.Drawing;
+using System.Runtime.InteropServices;//引用DLL申明
+
 
 namespace ThinkVantage
 {
@@ -16,6 +19,46 @@ namespace ThinkVantage
         Random red = new Random();
         Random green = new Random();
         Random blue = new Random();
+
+        [StructLayout(LayoutKind.Sequential)]
+        public struct MARGINS
+        {
+            public int Left;
+            public int Right;
+            public int Top;
+            public int Bottom;
+        }
+
+        [DllImport("dwmapi.dll", PreserveSig = false)]
+        static extern void DwmExtendFrameIntoClientArea(IntPtr hwnd, ref MARGINS
+        margins);
+
+        //DLL申明
+        [DllImport("dwmapi.dll", PreserveSig = false)]
+        static extern bool DwmIsCompositionEnabled();
+
+        //直接添加代码
+        protected override void OnLoad(EventArgs e)
+        {
+            if (DwmIsCompositionEnabled())
+            {
+                MARGINS margins = new MARGINS();
+                margins.Right = margins.Left = margins.Top = margins.Bottom =
+        this.Width + this.Height;
+                DwmExtendFrameIntoClientArea(this.Handle, ref margins);
+            }
+            base.OnLoad(e);
+        }
+
+        protected override void OnPaintBackground(PaintEventArgs e)
+        {
+            base.OnPaintBackground(e);
+            if (DwmIsCompositionEnabled())
+            {
+                e.Graphics.Clear(Color.Black);
+            }
+        }
+
 
         public ThinkSUN()
         {
