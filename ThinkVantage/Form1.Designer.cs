@@ -55,6 +55,10 @@
             this.Third.SuspendLayout();
             this.Forth.SuspendLayout();
             this.SuspendLayout();
+            this.buttons[0] = button1;
+            this.buttons[1] = button2;
+            this.buttons[2] = button3;
+            this.buttons[3] = button4;
             // 
             // button1
             // 
@@ -304,6 +308,7 @@
 
         #endregion
 
+        private System.Windows.Forms.Button[] buttons = new System.Windows.Forms.Button[4];
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button3;
