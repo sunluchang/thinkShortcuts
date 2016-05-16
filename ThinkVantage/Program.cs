@@ -14,9 +14,19 @@ namespace ThinkVantage
         [STAThread]
         static void Main()
         {
-            Application.EnableVisualStyles();
-            Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new ThinkSUN());
+            bool runone;
+            System.Threading.Mutex run = new System.Threading.Mutex(true, "ThinkVantage", out runone);
+            if (runone)
+            {
+                run.ReleaseMutex();
+                Application.EnableVisualStyles();
+                Application.SetCompatibleTextRenderingDefault(false);
+                Application.Run(new ThinkSUN());
+            }
+            else
+            {
+                ;
+            }
         }
     }
 }
