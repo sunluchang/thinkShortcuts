@@ -65,8 +65,8 @@ namespace ThinkVantage
 
         private string getName(string name)
         {
-            string[] namesOLD = new string[] {"UC Browser", "QQ", "Photoshop", "AfterEffects", "Dreamweaver", "Counter-Strike", "devenv" };
-            string[] namesNEW = new string[] {"UC", "QQ", "Ps", "Ae", "Dw", "CS", "Vs" };
+            string[] namesOLD = new string[] { "whatDoWeEatToday", "UC Browser", "QQ", "Photoshop", "AfterEffects", "Dreamweaver", "Counter-Strike", "devenv" };
+            string[] namesNEW = new string[] {"EAT", "UC", "QQ", "Ps", "Ae", "Dw", "CS", "Vs" };
             string ret = name;
             int flag = 0;
             int i = 0;
@@ -93,28 +93,28 @@ namespace ThinkVantage
                         string name = temp[temp.Length-1];
                         button1.Text = getName(name.Split('.')[0]);
                         button1.Tag = name.Split('.')[0];
-                        button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        //button1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
                         break;
                     case 2:
                         string[] temp2 = buttontwo.Split('\\');
                         string name2 = temp2[temp2.Length - 1];
                         button2.Text = getName(name2.Split('.')[0]);
                         button2.Tag = name2.Split('.')[0];
-                        button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                       // button2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
                         break;
                     case 3:
                         string[] temp3 = buttonthree.Split('\\');
                         string name3 = temp3[temp3.Length - 1];
                         button3.Text = getName(name3.Split('.')[0]);
                         button3.Tag = name3.Split('.')[0];
-                        button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        //button3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
                         break;
                     case 4:
                         string[] temp4 = buttonfour.Split('\\');
                         string name4 = temp4[temp4.Length - 1];
                         button4.Text = getName(name4.Split('.')[0]);
                         button4.Tag = name4.Split('.')[0];
-                        button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
+                        //button4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(red.Next(256))))), ((int)(((byte)(red.Next(50, 200))))), ((int)(((byte)(red.Next(230, 256))))));
                         break;
                 }
             }
