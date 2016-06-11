@@ -1,5 +1,5 @@
-# thinkShortcuts
+#### thinkShortcuts
 
-#BIGGER AND BIGGER .
-#BIGGGER AND BIGGGER .
+###BIGGER AND BIGGER .
+##BIGGGER AND BIGGGER .
 #BIGGGGER AND BIGGGGER .
